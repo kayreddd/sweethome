@@ -61,7 +61,7 @@ body {
 .right_box_contact{
     display: flex;
     flex-direction: column;
-    width: 39rem;
+    width: 35rem;
     height: 43rem;
     align-items: center;
     background-color: #e5d6b9;
