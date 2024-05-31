@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #F3F0EA;
+    color: black;
+}
+
+/* MAIN */
+
+.img_home_page {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.cta-button {
+    margin-top: -250px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    margin-top: -300px;
+
+}
+
+.cta-button a button {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 90px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.best-seller-title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding-bottom: 100px;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 70px;
+    display: flex;
+    gap: 70px;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    gap: 20px;
+}
+
+.no-img-product {
+    border-radius: 15px;
+}
+
+.event-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    line-height: 70px;
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
