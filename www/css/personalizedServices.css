@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #F3F0EA;
+    color: black;
+}
+
+/* MAIN */
+
+.custom-order-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding-top: 180px;
+}
+
+.custom-order-title {
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+}
+
+.custom-order-text {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    padding-bottom: 200px;
+}
+
+/* .img-custom-order {
+    padding-bottom: 200px;
+}
+
+.img-custom-order-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.img-custom-order-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.img1, .img3 {
+    margin-right: 50px;
+}
+
+.img2, .img4 {
+    margin-left: 50px;
+}
+
+.img1, .img2 {
+    margin-bottom: 100px;
+} */
+
+/* .img-custom-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+    padding-bottom: 200px;
+} */
+
+/* .img1, .img2, .img3, .img4 {
+    width: 40%;
+} */
+
+/*------------------------------------------------------------*/
+
+.img-custom-order {
+    padding-bottom: 300px;
+}
+
+.img-custom-order-1 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.img-custom-order-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.img-custom-order a {
+    display: flex;
+    justify-content: center;
+}
+
+.img-custom-order img {
+    width: 80%;
+}
