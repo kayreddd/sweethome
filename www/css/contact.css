@@ -20,13 +20,16 @@ body {
     height: 36rem;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 47px;
     padding-left: 26px;
 
 }
 .text1-contact{
     font-size: 20px;
-    padding-top: 35px;
+    padding-top: 10px;
+}
+.text1-contact span{
+    font-weight: 700;
 }
 .text2-contact{
     font-size: 35px;
@@ -36,6 +39,7 @@ body {
 }
 .text3-contact{
     font-size: 20px;
+    line-height: 2.5rem;
 }
 
 .text4-contact{
@@ -44,7 +48,7 @@ body {
 }
 
 .text5-contact{
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .social_medias{
@@ -53,6 +57,7 @@ body {
     gap: 26px;
     color: #111516;
     font-size: 30px;
+    margin-top: -20px;
 }
 
 .fa-copyright{

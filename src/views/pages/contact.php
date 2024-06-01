@@ -11,7 +11,7 @@ ob_start(); ?>
     <main>
         <div class="all_block_contact">
             <div class="left_box_contact">
-                <div class="text1-contact">BIENVENUE CHEZ SWEET HOME</div>
+                <div class="text1-contact">BIENVENUE CHEZ <span>SWEET HOME</span></div>
                 <div class="text2-contact">Éveillez vos papilles avec nos pâtisseries artisanales et gourmandes</div>
                 <div class="text3-contact">
                     Adresse de la boutique :<br>
@@ -25,7 +25,7 @@ ob_start(); ?>
                     <i class="fa-brands fa-snapchat"></i>
                     <i class="fa-brands fa-pinterest"></i>
                 </div>
-                <div class="text5-contact"><i class="fa-regular fa-copyright"></i>2024 Politique de confidentialité</div>
+                <div class="text5-contact"><i class="fa-regular fa-copyright"></i> 2024 Politique de confidentialité</div>
             </div>
             <div class="right_box_contact">
                 <form>
