@@ -8,8 +8,8 @@ $page = 'home';
 if (isset($_GET['p'])) {
     if (in_array($_GET['p'], $existing_pages)) {
         $page = $_GET['p'];
-    } else if (in_array($_GET['p'], $product_pages)){
-        $page = "product";
+    } else if (in_array($_GET['p'], $feed_pages)){
+        $page = "feedPage";
     } else {
         $page = '404';
     }
