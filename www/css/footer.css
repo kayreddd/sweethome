@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #F3F0EA;
+}
+footer {
+    color: black;
+    margin-top: 310px;
+}
+
+.all-foot1 {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 115px;
+
+}
+
+.all-foot1 p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+.footer_part1, .footer_part2, .footer_part3{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 15px;
+}
+
+footer li {
+    padding-bottom: 15px;
+}
+
+.footer_part2 li:hover{
+    text-decoration: underline;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    /* opacity: 50%; */
+}
+
+
+.all-foot2 {
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding-top: 60px;
+    margin-bottom: 10px;
+    
+}
+.second_footer {
+    display: flex;
+    border-top: inset;
+    gap: 499px;
+    padding-top: 15px;
+}
+.logo_social {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+}
+.logo_payment {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 20px;
+}
+.text-mid {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
