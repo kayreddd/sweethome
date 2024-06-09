@@ -16,8 +16,12 @@ body {
 
 .product-feed-all {
     display: flex;
-    justify-content: space-evenly;
     padding-bottom: 100px;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 13rem;
 }
 
 .product-feed-info {

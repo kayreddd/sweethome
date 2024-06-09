@@ -9,6 +9,8 @@ require_once __DIR__ . '../../utils/db.php';
 
 // Configuration du site
 $existing_pages = ['home', 'personalizedServices', 'feedPage','contact'];
+$feed_pages = ['breads','pastries'];
+
 
 // Les classes
 require_once __DIR__ . '../../class/DbManager.php';
