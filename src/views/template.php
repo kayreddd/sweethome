@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/home.css">
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/personalizedServices.css">
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/feedPage.css">
+        <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/shopCart.css">
     </head>
     <body>
         <?= $navbar ?>
