@@ -8,110 +8,17 @@ body {
     font-family: "Inria Serif", serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #F3F0EA;
+    background-color: #F3F0EA !important;
     color: black;
-}
-
-/* MAIN */
-.shopping-cart {
-    width: 750px;
-    height: 423px;
-    margin: 80px auto;
-    background: #FFFFFF;
-    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* TITLE */
-.title {
-    height: 60px;
-    border-bottom: 1px solid #E1E8EE;
-    padding: 20px 30px;
-    color: #5E6977;
-    font-size: 18px;
-    font-weight: 400;
-}
-   
-.item {
-    padding: 20px 30px;
-    height: 120px;
-    display: flex;
-}
-   
-.item:nth-child(3) {
-    border-top:  1px solid #E1E8EE;
-    border-bottom:  1px solid #E1E8EE;
-}
-
-/* BUTTONS */
-.buttons {
-    position: relative;
-    padding-top: 30px;
-    margin-right: 60px;
-}
-.delete-btn,
-.like-btn {
-    display: inline-block;
-    Cursor: pointer;
 }
 .delete-btn {
     width: 18px;
     height: 17px;
-    background: url(&amp;amp;quot;delete-icn.svg&amp;amp;quot;) no-repeat center;
+    /* background: url(&amp;amp;quot;delete-icn.svg&amp;amp;quot;) no-repeat center; */
 }
-   
-.like-btn {
-    position: absolute;
-    top: 9px;
-    left: 15px;
-    background: url('twitter-heart.png');
-    width: 60px;
-    height: 60px;
-    background-size: 2900%;
-    background-repeat: no-repeat;
-}
-
-/* ANIMATION */
-.is-active {
-    animation-name: animate;
-    animation-duration: .8s;
-    animation-iteration-count: 1;
-    animation-timing-function: steps(28);
-    animation-fill-mode: forwards;
-}
-   
-  @keyframes animate {
-    0%   { background-position: left;  }
-    50%  { background-position: right; }
-    100% { background-position: right; }
-}
-
-/* IMAGE AND DESCRIPTION */
-.image {
-    margin-right: 50px;
-}
-.description {
-    padding-top: 10px;
-    margin-right: 60px;
-    width: 115px;
-}
-   
-.description span {
-    display: block;
-    font-size: 14px;
-    color: #43484D;
-    font-weight: 400;
-}
-   
-.description span:first-child {
-    margin-bottom: 5px;
-}
-.description span:last-child {
-    font-weight: 300;
-    margin-top: 8px;
-    color: #86939E;
+.delete-btn i, .like-btn i {
+    color: grey;
+    font-size: 25px;
 }
 
 /* QUANTITY BUTTON */
@@ -125,8 +32,8 @@ body {
     text-align: center;
     width: 32px;
     font-size: 16px;
-    color: #43484D;
-    font-weight: 300;
+    color: black;
+    font-weight: bold;
 }
    
   button[class*=btn] {
@@ -147,16 +54,6 @@ body {
   button:focus,
   input:focus {
     outline:0;
-}
-
-/* TOTAL PRICE */
-.total-price {
-    width: 83px;
-    padding-top: 27px;
-    text-align: center;
-    font-size: 16px;
-    color: #43484D;
-    font-weight: 300;
 }
 
 /* RESPONSIVE */
