@@ -9,6 +9,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
         <title><?= $title ?></title>
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/contact.css">
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/footer.css">
@@ -20,6 +23,7 @@
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/home.css">
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/personalizedServices.css">
         <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/feedPage.css">
+        <link rel="stylesheet" href="<?=PROJECT_FOLDER ?>www/css/individualProductPage.css">
     </head>
     <body>
         <?= $navbar ?>

@@ -15,17 +15,6 @@ ob_start(); ?>
         <p class="custom-order-text">Nous réalisons des prestations personnalisées selon vos besoins pour tout type d'événements</p>
     </div>
 
-    <!-- <div class="img-custom-order">
-        <div class="img-custom-order-1">
-            <img src="<?=PROJECT_FOLDER ?>src/images/personalized-services-wedding.svg" alt="">
-            <img src="<?=PROJECT_FOLDER ?>src/images/personalized-services-private-party.svg" alt="">
-        </div>
-        <div class="img-custom-order-2">
-            <img src="<?=PROJECT_FOLDER ?>src/images/personalized-services-hotels.svg" alt="">
-            <img src="<?=PROJECT_FOLDER ?>src/images/personalized-services-custom-order.svg" alt="">
-        </div>
-    </div> -->
-
     <div class="img-custom-order">
         <div class="img-custom-order-1">
             <a href=""><img src="<?=PROJECT_FOLDER ?>src/images/personalized-services-wedding.svg" alt=""></a>
