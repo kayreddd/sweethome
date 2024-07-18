@@ -15,7 +15,7 @@ ob_start(); ?>
     </div>
 
     <div class="cta-button">
-        <a href=""><button>Voir nos pâtisseries</button></a>
+        <a href="<?=PROJECT_FOLDER ?>www/?p=pastries"><button>Voir nos pâtisseries</button></a>
     </div>
 
     <div class="best-seller-title">
