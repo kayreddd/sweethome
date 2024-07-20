@@ -2,27 +2,45 @@
 
 $page = $_GET['p'];
 $title = "Sweet Home";
+$search = isset($_GET['search']) ? $_GET['search'] : '';
 
-require_once __DIR__ .'/../../utils/common.php';
+require_once __DIR__ . '/../../utils/common.php';
 //appel de la fonction qui récup les info en bdd
 $feedPage = $BDD->getFeedPageContentBDD($page);
+
+// Filtrer les résultats en fonction du terme de recherche
+if (!empty($search)) {
+    $feedPage = array_filter($feedPage, function($product) use ($search) {
+        return stripos($product['product_name'], $search) !== false;
+    });
+}
+
 ob_start(); ?>
 
 <body>
     <?php require_once __DIR__ . '/../partials/navbar.php'; ?>
+    <form method="get" action="">
+        <input type="hidden" name="p" value="<?= htmlspecialchars($page) ?>">
+        <div class="search_bar">
+            <input type="text" name="search" class="searchTerm" placeholder="Rechercher" value="<?= htmlspecialchars($search)?>">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
 
     <div class="product-feed-all">
-        <?php foreach($feedPage as $row){?>
+        <?php foreach ($feedPage as $row) { ?>
             <div class="product-feed-bloc">
                 <div class="product-feed-img">
-                    <img src="<?=PROJECT_FOLDER ?>src/images/no_image.svg" alt="">
+                    <img src="<?= PROJECT_FOLDER ?>src/images/no_image.svg" alt="">
                 </div>
                 <div class="product-feed-info">
-                    <p><?php echo $row['product_name']?></p>
-                    <p><?php echo $row['price']?>€</p>
+                    <p><?php echo $row['product_name'] ?></p>
+                    <p><?php echo $row['price'] ?>€</p>
                 </div>
             </div>
-        <?php }?>
+        <?php } ?>
     </div>
 </body>
 

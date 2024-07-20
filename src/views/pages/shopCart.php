@@ -47,7 +47,7 @@ ob_start(); ?>
                                                     </div>
                                                 </div>
                                             </th>
-                                            <td class="border-0 align-middle"><strong>3.10€</strong></td>
+                                            <td class="border-0 align-middle"><strong class="unit-price" data-price="3.10">3.10€</strong></td>
                                             <td class="border-0 align-middle">
                                                 <div class="quantity">
                                                     <button class="minus-btn" type="button" name="button">
@@ -70,7 +70,7 @@ ob_start(); ?>
                                                     </div>
                                                 </div>
                                             </th>
-                                            <td class="align-middle"><strong>1.50€</strong></td>
+                                            <td class="align-middle"><strong class="unit-price" data-price="1.50">1.50€</strong></td>
                                             <td class="align-middle">
                                                 <div class="quantity">
                                                     <button class="minus-btn" type="button" name="button">
@@ -93,7 +93,7 @@ ob_start(); ?>
                                                         <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Macaron framboise</a></h5><span class="text-muted font-weight-normal font-italic">Catégorie: Pâtisseries</span>
                                                     </div>
                                                 </div>
-                                            <td class="align-middle"><strong>3.00€</strong></td>
+                                            <td class="align-middle"><strong class="unit-price" data-price="3.00">3.00€</strong></td>
                                             <td class="align-middle">
                                                 <div class="quantity">
                                                     <button class="minus-btn" type="button" name="button">
@@ -155,7 +155,7 @@ ob_start(); ?>
     </main>
 
 </body>
-<script>
+<!-- <script>
     // système de quantité plus et moins
     $('.minus-btn').on('click', function(e) {
         e.preventDefault();
@@ -186,7 +186,52 @@ ob_start(); ?>
 
         $input.val(value);
     });
-</script>
+</script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Fonction pour mettre à jour le prix total basé sur la quantité
+    function updatePrice($row) {
+        var pricePerUnit = parseFloat($row.find('.unit-price').data('price'));
+        var quantity = parseInt($row.find('input').val());
+        var totalPrice = pricePerUnit * quantity;
+        $row.find('.unit-price').text(totalPrice.toFixed(2) + '€');
+    }
 
+    // Événement clic pour le bouton moins
+    $('.minus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $row = $this.closest('tr');
+        var $input = $row.find('input');
+        var value = parseInt($input.val());
+
+        if (value > 1) {
+            value = value - 1;
+            $input.val(value);
+            updatePrice($row);
+        }
+    });
+
+    // Événement clic pour le bouton plus
+    $('.plus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $row = $this.closest('tr');
+        var $input = $row.find('input');
+        var value = parseInt($input.val());
+
+        if (value < 100) {
+            value = value + 1;
+            $input.val(value);
+            updatePrice($row);
+        }
+    });
+
+    // Événement changement pour le champ d'entrée de quantité
+    $('input').on('change', function() {
+        var $row = $(this).closest('tr');
+        updatePrice($row);
+    });
+</script>
 
 <?php $page_content = ob_get_clean();
