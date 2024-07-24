@@ -41,7 +41,7 @@ ob_start(); ?>
                                         <tr>
                                             <th scope="row" class="border-0">
                                                 <div class="p-2">
-                                                    <img src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <img src="<?=PROJECT_FOLDER ?>src/images/tarte-aux-fraises-1.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
                                                         <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Tarte aux fraises</a></h5><span class="text-muted font-weight-normal font-italic d-block">Catégorie: Pâtisseries</span>
                                                     </div>
@@ -64,7 +64,7 @@ ob_start(); ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="p-2">
-                                                    <img src="<?=PROJECT_FOLDER ?>src/images/no_image.svg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <img src="<?=PROJECT_FOLDER ?>src/images/BAGUETTE-TRADITION-COUP2-825x510.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
                                                         <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Baguette tradition</a></h5><span class="text-muted font-weight-normal font-italic">Catégorie: Pains</span>
                                                     </div>
@@ -88,7 +88,7 @@ ob_start(); ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="p-2">
-                                                    <img src="https://bootstrapious.com/i/snippets/sn-cart/product-3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <img src="<?=PROJECT_FOLDER ?>src/images/macarons_framboise.png" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
                                                         <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Macaron framboise</a></h5><span class="text-muted font-weight-normal font-italic">Catégorie: Pâtisseries</span>
                                                     </div>
@@ -122,9 +122,9 @@ ob_start(); ?>
                             <div class="p-4">
                                 <p class="font-italic mb-4">Si vous avez un code promo, veuillez le saisir dans la case ci-dessous.</p>
                                 <div class="input-group mb-4 border rounded-pill p-2">
-                                    <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+                                    <input type="text" placeholder="Entrer votre code promo" aria-describedby="button-addon3" class="form-control border-0" id="promo-code">
                                     <div class="input-group-append border-0">
-                                        <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Ajoutez un code</button>
+                                        <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -139,11 +139,11 @@ ob_start(); ?>
                             <div class="p-4">
                                 <p class="font-italic mb-4">Les frais d'expédition et les frais supplémentaires sont calculés en fonction des valeurs que vous avez saisies.</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong>7.60€</strong></li>
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Frais de livraison</strong><strong>2.99€</strong></li>
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>0.00€</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong id="subtotal">7.60€</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Frais de livraison</strong><strong id="delivery-fee">2.99€</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong id="tax">0.00€</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                        <h5 class="font-weight-bold">10.59€</h5>
+                                        <h5 class="font-weight-bold" id="total">10.59€</h5>
                                     </li>
                                 </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Passer au paiement</a>
                             </div>
@@ -155,38 +155,7 @@ ob_start(); ?>
     </main>
 
 </body>
-<!-- <script>
-    // système de quantité plus et moins
-    $('.minus-btn').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
 
-        if (value > 1) {
-            value = value - 1;
-        } else {
-            value = 0;
-        }
-
-        $input.val(value);
-    });
-
-    $('.plus-btn').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
-
-        if (value < 100) {
-            value = value + 1;
-        } else {
-            value = 100;
-        }
-
-        $input.val(value);
-    });
-</script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     // Fonction pour mettre à jour le prix total basé sur la quantité
@@ -231,6 +200,36 @@ ob_start(); ?>
     $('input').on('change', function() {
         var $row = $(this).closest('tr');
         updatePrice($row);
+    });
+    /*---------------------------------------------------------*/
+
+    //fonction permettant l'utilisation des codes promos
+    document.getElementById('button-addon3').addEventListener('click', function() {
+        var promoCode = document.getElementById('promo-code').value;
+        var subtotalElem = document.getElementById('subtotal');
+        var deliveryFeeElem = document.getElementById('delivery-fee');
+        var taxElem = document.getElementById('tax');
+        var totalElem = document.getElementById('total');
+
+        var total = parseFloat(totalElem.textContent.replace('€', ''));
+        var deliveryFee = parseFloat(deliveryFeeElem.textContent.replace('€', ''));
+        var tax = parseFloat(taxElem.textContent.replace('€', ''));
+
+        var discount = 0;
+
+        // Ajoutez ici vos conditions de code promo
+        if (promoCode === 'PROMO10') {
+            discount = 10; // 10% de réduction
+        } else if (promoCode === 'PROMO20') {
+            discount = 20; // 20% de réduction
+        } else if (promoCode === 'PROMO50') {
+            discount = 50; // 50% de réduction
+        }
+
+        var discountAmount = (total * discount) / 100;
+        var newTotal = total - discountAmount;
+
+        totalElem.textContent = newTotal.toFixed(2) + '€';
     });
 </script>
 
