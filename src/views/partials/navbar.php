@@ -4,11 +4,31 @@ ob_start();?>
 
 <nav>
     <ul>
-        <a href="<?=PROJECT_FOLDER ?>www/?p=home"><li>Accueil</li></a>
-        <a href=""><li>Nos produits</li></a>
-        <a href="<?=PROJECT_FOLDER ?>www/?p=home"><img src="<?=PROJECT_FOLDER ?>src/images/logo_sweethome.svg" alt=""></a>
-        <a href="<?=PROJECT_FOLDER ?>www/?p=personalizedServices"><li class="navbar-elt">Nos prestations <br> personnalisées</li></a>
-        <a href="<?=PROJECT_FOLDER ?>"><li>Contact</li></a>
+        <li><a href="<?=PROJECT_FOLDER ?>www/?p=home">Accueil</a></li>
+
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Nos produits</a>
+          <div class="dropdown-content">
+            <a href="<?=PROJECT_FOLDER ?>www/?p=breads">Pains</a>
+            <a href="<?=PROJECT_FOLDER ?>www/?p=pastries">Pâtisseries</a>
+            <a href="<?=PROJECT_FOLDER ?>www/?p=sandwiches">Sandwich</a>
+            <a href="<?=PROJECT_FOLDER ?>www/?p=drinks">Boissons</a>
+          </div>
+        </li>
+
+        <li><a href="<?=PROJECT_FOLDER ?>www/?p=home"><img src="<?=PROJECT_FOLDER ?>src/images/logo_sweethome.svg" alt=""></a></li>
+
+        <li class="dropdown">
+            <a href="<?=PROJECT_FOLDER ?>www/?p=personalizedServices" class="dropbtn">Nos prestations <br> personnalisées</a>
+            <div class="dropdown-content">
+              <a href="#">Mariages</a>
+              <a href="#">Fêtes privées</a>
+              <a href="#">Hôtels</a>
+              <a href="#">Commande <br> personnalisée</a>
+            </div>
+          </li>
+
+        <li><a href="<?=PROJECT_FOLDER ?>www/?p=contact">Contact</a></li>
     </ul>
 </nav>
 

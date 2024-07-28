@@ -3,7 +3,7 @@
 
 ob_start();?>
 
-<footer>
+<!-- <footer>
     <div class="all-foot1">
         <div class="footer_part1">
             <p>NOUS CONTACTER</p>
@@ -50,7 +50,7 @@ ob_start();?>
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 <?php
 
