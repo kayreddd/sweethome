@@ -10,9 +10,9 @@ if (isset($_GET['p'])) {
         $page = $_GET['p'];
     } else if (in_array($_GET['p'], $feed_pages)){
         $page = "feedPage";
-    } else {
+    } /*else {
         $page = '404';
-    }
+    }*/
 }
 
 require_once __DIR__ . '/../src/views/partials/navbar.php';
