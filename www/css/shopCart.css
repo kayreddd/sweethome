@@ -11,6 +11,11 @@ body {
     background-color: #F3F0EA !important;
     color: black;
 }
+
+.input-group{
+  flex-direction: row !important;
+  align-items: center !important;
+}
 .delete-btn {
     width: 18px;
     height: 17px;
