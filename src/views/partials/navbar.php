@@ -3,7 +3,7 @@
 ob_start();?>
 
 <nav>
-    <ul>
+    <ul class="navbar_ul">
         <li><a href="<?=PROJECT_FOLDER ?>www/?p=home">Accueil</a></li>
 
         <li class="dropdown">
