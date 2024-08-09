@@ -28,7 +28,8 @@ body {
 
 /* QUANTITY BUTTON */
 .quantity {
-    padding-top: 20px;
+    /* padding-top: 20px; */
+    padding-top: 0px;
     margin-right: 60px;
 }
 .quantity input {

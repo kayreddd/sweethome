@@ -31,8 +31,8 @@ ob_start(); ?>
 
     <div class="product-feed-all">
         <?php foreach ($feedPage as $row) { ?>
-            <div class="product-feed-bloc">
-                <div class="product-feed-img">
+            <div class="product-feed-bloc" >
+                <div class="product-feed-img" onclick="location.href='<?=PROJECT_FOLDER ?>www/?p=individualProductPage&product=<?=$row['product_id']?>'"> <!-- ajout de l'url permettant d'aller sur individual page avec l'id du product -->
                     <img src="<?= PROJECT_FOLDER ?>src/images/no_image.svg" alt="">
                 </div>
                 <div class="product-feed-info">

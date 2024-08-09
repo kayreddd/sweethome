@@ -16,4 +16,11 @@ class DbManager {
         $pdoStatement->execute();
         return $pdoStatement->fetchAll();
     }
+
+    function getProductContentBDD(string $productID){
+        $pdoStatement = $this->db->prepare('SELECT * FROM feed_page_content WHERE product_id = :product_id');
+        $pdoStatement->bindParam(':product_id', $productID);
+        $pdoStatement->execute();
+        return $pdoStatement->fetchAll();
+    }
 }

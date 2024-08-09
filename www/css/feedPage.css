@@ -32,6 +32,10 @@ body {
     margin-right: 7px;
 }
 
+.product-feed-img{
+    cursor: pointer;
+}
+
 .product-feed-info p {
     font-size: 18px;
     font-weight: 500;

@@ -53,10 +53,10 @@ ob_start(); ?>
                                                 <div class="quantity">
                                                     <button class="minus-btn" type="button" name="button">
                                                         <i class="fa-solid fa-minus"></i>
-                                                        </button>
-                                                        <input type="text" name="name" value="1">
-                                                        <button class="plus-btn" type="button" name="button">
-                                                            <i class="fa-solid fa-plus"></i>
+                                                    </button>
+                                                    <input type="text" name="name" value="1">
+                                                    <button class="plus-btn" type="button" name="button">
+                                                        <i class="fa-solid fa-plus"></i>
                                                     </button>
                                                 </div>
                                             </td>
@@ -103,7 +103,6 @@ ob_start(); ?>
                                                     <input type="text" name="name" value="1">
                                                     <button class="plus-btn" type="button" name="button">
                                                         <i class="fa-solid fa-plus"></i>
-                                                        
                                                     </button>
                                                 </div>
                                             </td>
