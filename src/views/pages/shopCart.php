@@ -6,6 +6,19 @@ $title = "Sweet Home";
 
 require_once __DIR__ . '/../../utils/common.php';
 
+if (isset($_SESSION["cart"])) $cart = ($_SESSION["cart"]);
+var_dump($cart);
+// session_destroy();
+
+//fonction supprimer article panier
+function supp_article($id){
+    if(isset($is)) {
+        array_splice($cart, $id, 1);
+        // header("refresh: 0"); 
+    }
+    
+}
+
 ob_start(); ?>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
@@ -39,76 +52,31 @@ ob_start(); ?>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row" class="border-0">
-                                                <div class="p-2">
-                                                    <img src="<?=PROJECT_FOLDER ?>src/images/tarte-aux-fraises-1.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Tarte aux fraises</a></h5><span class="text-muted font-weight-normal font-italic d-block">Catégorie: Pâtisseries</span>
+                                        <?php foreach($cart as $row){?>
+                                            <tr>
+                                                <th scope="row" class="border-0">
+                                                    <div class="p-2">
+                                                        <img src="<?=PROJECT_FOLDER ?>src/images/<?php echo $row["image"]?>" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                        <div class="ml-3 d-inline-block align-middle">
+                                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><?php echo $row["name"]?></a></h5><span class="text-muted font-weight-normal font-italic d-block">Catégorie: <?php echo $row["category"]?></span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </th>
-                                            <td class="border-0 align-middle"><strong class="unit-price" data-price="3.10">3.10€</strong></td>
-                                            <td class="border-0 align-middle">
-                                                <div class="quantity">
-                                                    <button class="minus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    </button>
-                                                    <input type="text" name="name" value="1">
-                                                    <button class="plus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="p-2">
-                                                    <img src="<?=PROJECT_FOLDER ?>src/images/BAGUETTE-TRADITION-COUP2-825x510.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Baguette tradition</a></h5><span class="text-muted font-weight-normal font-italic">Catégorie: Pains</span>
+                                                </th>
+                                                <td class="border-0 align-middle"><strong class="unit-price" data-price="<?php echo number_format((float)$row["price"], 2, '.', '')?>"><?php echo number_format((float)$row["price"], 2, '.', '')?>€</strong></td>
+                                                <td class="border-0 align-middle">
+                                                    <div class="quantity">
+                                                        <button class="minus-btn" type="button" name="button">
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" name="name" value="<?php echo $row["quantity"]?>">
+                                                        <button class="plus-btn" type="button" name="button">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
                                                     </div>
-                                                </div>
-                                            </th>
-                                            <td class="align-middle"><strong class="unit-price" data-price="1.50">1.50€</strong></td>
-                                            <td class="align-middle">
-                                                <div class="quantity">
-                                                    <button class="minus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    </button>
-                                                    <input type="text" name="name" value="1">
-                                                    <button class="plus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="p-2">
-                                                    <img src="<?=PROJECT_FOLDER ?>src/images/macarons_framboise.png" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                                    <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Macaron framboise</a></h5><span class="text-muted font-weight-normal font-italic">Catégorie: Pâtisseries</span>
-                                                    </div>
-                                                </div>
-                                            <td class="align-middle"><strong class="unit-price" data-price="3.00">3.00€</strong></td>
-                                            <td class="align-middle">
-                                                <div class="quantity">
-                                                    <button class="minus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-minus"></i>
-                                                    </button>
-                                                    <input type="text" name="name" value="1">
-                                                    <button class="plus-btn" type="button" name="button">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td class="border-0 align-middle"><a href="javascript:void(0)" onclick="<?php supp_article(key($row))?>"  class="text-dark"><i class="fa fa-trash"></i></a></td>
+                                            </tr>
+                                       <?php }?>
                                     </tbody>
                                 </table>
                             </div>

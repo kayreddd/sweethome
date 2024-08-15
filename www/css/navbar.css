@@ -100,3 +100,19 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+li.logo_shop{
+    display: flex;
+    position: absolute;
+    right: 2px;
+    padding-right: 46px;
+    font-size: 27px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+li.logo_shop a i {
+    color: #352f36; /* Couleur de base de l'icône */
+}
+
+li.logo_shop:hover a i {
+    transform: scale(1.2); /* Agrandissement de l'icône au survol */
+    color: black; /* Change la couleur au survol (par exemple, une couleur orange) */
+}

@@ -23,7 +23,7 @@ ob_start();?>
             </ul>
         </div>
         <div class="footer_part3">
-            <img class="img_sweet_home" src="<?= PROJECT_FOLDER ?>/src/img/sweetHome.svg">
+            <img class="img_sweet_home" src="<?= PROJECT_FOLDER ?>/src/images/sweetHome.svg">
         </div>
     </div>
     <div class="all-foot2">

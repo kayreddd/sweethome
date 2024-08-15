@@ -36,6 +36,11 @@ body {
     cursor: pointer;
 }
 
+.product-feed-img img{
+    object-fit: fill;
+    border-radius: 5px;
+}
+
 .product-feed-info p {
     font-size: 18px;
     font-weight: 500;
