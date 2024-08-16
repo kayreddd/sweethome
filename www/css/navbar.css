@@ -116,3 +116,61 @@ li.logo_shop:hover a i {
     transform: scale(1.2); /* Agrandissement de l'icône au survol */
     color: black; /* Change la couleur au survol (par exemple, une couleur orange) */
 }
+
+/* Responsive adjustments */
+
+@media only screen and (max-width: 992px) {
+    .navbar_ul {
+        justify-content: space-around;
+    }
+    li.logo_shop {
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+    .navbar_ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .dropdown-content {
+        position: static;
+    }
+    li.logo_shop {
+        position: relative;
+        right: 0;
+        padding-right: 0;
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar_ul {
+        align-items: center;
+    }
+    li.logo_shop {
+        font-size: 22px;
+    }
+    .dropdown a, .dropbtn {
+        padding: 10px 12px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    nav {
+        padding-top: 15px;
+        padding-bottom: 80px;
+    }
+    .navbar_ul {
+        gap: 15px;
+    }
+    li.logo_shop {
+        font-size: 20px;
+        padding-right: 20px;
+    }
+}

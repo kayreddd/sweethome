@@ -99,3 +99,7 @@ body {
 .text-muted{
   text-transform: capitalize;
 }
+
+.btn-trash{
+  background-color: transparent !important;
+}

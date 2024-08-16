@@ -7,16 +7,21 @@ $title = "Sweet Home";
 require_once __DIR__ . '/../../utils/common.php';
 
 if (isset($_SESSION["cart"])) $cart = ($_SESSION["cart"]);
-var_dump($cart);
+// var_dump($cart);
 // session_destroy();
 
 //fonction supprimer article panier
 function supp_article($id){
-    if(isset($is)) {
-        array_splice($cart, $id, 1);
-        // header("refresh: 0"); 
-    }
-    
+    if(isset($_SESSION["cart"]) && isset($_SESSION["cart"][$id])) {
+        array_splice($_SESSION["cart"], $id, 1); //on supprime le produit dans le tableau session cart
+        header("refresh:0"); // Recharge la page pour refléter les changements
+        exit();
+    }   
+}
+
+// Vérifie si un article doit être supprimé
+if (isset($_POST['delete_id'])) {
+    supp_article($_POST['delete_id']);  
 }
 
 ob_start(); ?>
@@ -34,7 +39,7 @@ ob_start(); ?>
 
                             <!-- Shopping cart table -->
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="product_shopcart">
                                     <thead>
                                         <tr>
                                             <th scope="col" class="border-0 bg-light">
@@ -52,7 +57,7 @@ ob_start(); ?>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($cart as $row){?>
+                                        <?php foreach($cart as $key => $row){?>
                                             <tr>
                                                 <th scope="row" class="border-0">
                                                     <div class="p-2">
@@ -74,7 +79,14 @@ ob_start(); ?>
                                                         </button>
                                                     </div>
                                                 </td>
-                                                <td class="border-0 align-middle"><a href="javascript:void(0)" onclick="<?php supp_article(key($row))?>"  class="text-dark"><i class="fa fa-trash"></i></a></td>
+                                                <td class="border-0 align-middle">
+                                                    <form method="post" action=""> <!--formulaire caché pour pour faire la suppression d'article-->
+                                                        <input type="hidden" name="delete_id" value="<?= $key ?>">
+                                                        <button type="submit" class="btn btn-link text-dark p-0 m-0 btn-trash">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>                                                
+                                                </td>
                                             </tr>
                                        <?php }?>
                                     </tbody>
@@ -198,6 +210,32 @@ ob_start(); ?>
         var newTotal = total - discountAmount;
 
         totalElem.textContent = newTotal.toFixed(2) + '€';
+    });
+    /*---------------------------------------------------------*/
+    
+    $(document).ready(function() {
+        //calcul prix panier
+        var table = document.getElementById('product_shopcart'); //on recup la table contenat les produits du panier
+        var deliveryFeeElem = document.getElementById('delivery-fee').textContent; //on recup les frais de livraison
+        var subtotalElem = document.getElementById('subtotal'); //on recup le champ sous total pour le mettre à jour après
+        var totalField = document.getElementById('total'); //on recup le champ total final pour le mettre à jour
+        var deliveryFee = parseFloat(deliveryFeeElem.replace('€', '')); //on parse en float pour le calcul et on retire le €
+
+        var totalRowCount = table.tBodies[0].rows; //liste des tr
+        var subTotalCart = 0.0; //on declare une variable qui va stocké le total du panier sans les frais de livraison  
+        var totalFinalCart = 0.0; //ici on va stocké le prix final
+
+        //on boucle sur totalRowCount pour accéder au cellules (cases) contenant le prix de chaque produit
+        for(var i=0; i<totalRowCount.length; i++){
+            var price = totalRowCount[i].cells[1].innerText;
+            var priceBis = price.replace("€",""); //on vire le € pour le calcul
+            subTotalCart = subTotalCart + parseFloat(priceBis); //on calcule au fur à mesure avec le prix de chaque produit
+        }
+        totalFinalCart = subTotalCart + deliveryFee; //on ajoute les frais de livraison
+
+        subtotalElem.textContent = subTotalCart.toFixed(2) + '€'; //on remplace le sous total avec le vrai prix
+        totalField.textContent = totalFinalCart.toFixed(2) + '€';  //on remplace le total avec le vrai prix final
+
     });
 </script>
 

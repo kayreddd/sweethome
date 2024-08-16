@@ -91,8 +91,7 @@ function addCart($product_id, $product_name, $product_img, $product_cat){
             'category' => tradCategory($product_cat)
         );
         array_push($_SESSION["cart"], $product);
-    } else {
-        echo "Ce produit est déjà dans le panier.";
+        sleep(2);
     }
 }
 }
@@ -103,6 +102,11 @@ ob_start(); ?>
     <?php require_once __DIR__ . '/../partials/navbar.php'; ?>
 
     <div class="all_product_page">
+        <!--affiche une alerte (caché) quand on ajoute un produit dans le panier-->
+        <div id="alert" style=" display:none; position: fixed;top: 144px;left: 50%;transform: translateX(-50%);background-color: #20bd44;color: white;padding: 15px 50px;border-radius: 5px;z-index: 1000;font-size: 19px;">
+            Produit ajouté dans le panier !
+        </div>
+       
         <?php foreach ($individualProduct as $row) { ?>
             <div class="img_product">
                 <img src="<?= PROJECT_FOLDER ?>src/images/<?php echo $row["product_img"] == "" ? "no_image.svg" : $row["product_img"] ?>" alt="" width="605" height="530">
@@ -124,7 +128,7 @@ ob_start(); ?>
                     </div>
 
                     <div class="atc_button">
-                        <a href=""><button onclick="<?php addCart($product_id, $row['product_name'], $row['product_img'], $row["feed_pages"]);?>">Ajouter au panier</button></a>
+                        <a href=""><button id="addToCartBtn" onclick="<?php addCart($product_id, $row['product_name'], $row['product_img'], $row["feed_pages"]);?>">Ajouter au panier</button></a>
                     </div>
 
                 </form>
@@ -162,6 +166,16 @@ ob_start(); ?>
                 $('#calculated_price').val(totalPrice.toFixed(2));
             }
 
+            //affiche l'alerte en display block quand on click sur le bouton ajouter au panier
+            function showAlert() {
+                var alertBox = document.getElementById('alert');
+                alertBox.style.display = 'block';
+
+                setTimeout(function() {
+                    alertBox.style.display = 'none';
+                }, 2000); // Masque l'alerte après 2 secondes
+            }
+
             // Événement clic pour le bouton moins
             $('#decrease').on('click', function(e) {
                 e.preventDefault();
@@ -186,6 +200,11 @@ ob_start(); ?>
                     $input.val(value);
                     updatePrice();
                 }
+            });
+
+            //évenement clic pour le bouton ajouter au panier
+            $('#addToCartBtn').on('click', function(e) {
+                showAlert();
             });
         });
     </script>
