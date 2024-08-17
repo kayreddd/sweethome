@@ -21,7 +21,7 @@ ob_start(); ?>
 
 <body>
     <?php require_once __DIR__ . '/../partials/navbar.php'; ?>
-    <form method="get" action="">
+    <form class="searchBarForm" method="get" action="">
         <input type="hidden" name="p" value="<?= htmlspecialchars($page) ?>">
         <div class="search_bar">
             <input type="text" name="search" class="searchTerm" placeholder="Rechercher" value="<?= htmlspecialchars($search)?>">

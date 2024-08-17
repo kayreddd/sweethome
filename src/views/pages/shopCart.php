@@ -144,6 +144,8 @@ ob_start(); ?>
         var quantity = parseInt($row.find('input').val());
         var totalPrice = pricePerUnit * quantity;
         $row.find('.unit-price').text(totalPrice.toFixed(2) + '€');
+
+        updateTotalCart(); //la fonction est appelé à chaque fois le prix d'un produit est mis à jour
     }
 
     // Événement clic pour le bouton moins
@@ -213,9 +215,10 @@ ob_start(); ?>
     });
     /*---------------------------------------------------------*/
     
-    $(document).ready(function() {
-        //calcul prix panier
-        var table = document.getElementById('product_shopcart'); //on recup la table contenat les produits du panier
+    //fonction qui calcul et met à jour le prix du panier en fonction des produits du panier
+    function updateTotalCart(){
+         //calcul prix panier
+         var table = document.getElementById('product_shopcart'); //on recup la table contenat les produits du panier
         var deliveryFeeElem = document.getElementById('delivery-fee').textContent; //on recup les frais de livraison
         var subtotalElem = document.getElementById('subtotal'); //on recup le champ sous total pour le mettre à jour après
         var totalField = document.getElementById('total'); //on recup le champ total final pour le mettre à jour
@@ -235,6 +238,10 @@ ob_start(); ?>
 
         subtotalElem.textContent = subTotalCart.toFixed(2) + '€'; //on remplace le sous total avec le vrai prix
         totalField.textContent = totalFinalCart.toFixed(2) + '€';  //on remplace le total avec le vrai prix final
+    }
+
+    $(document).ready(function() {
+       updateTotalCart();
 
     });
 </script>
