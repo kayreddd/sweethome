@@ -12,50 +12,20 @@ body {
     color: black;
 }
 
-/* MAIN */
-
-/* nav {
+nav {
     padding-top: 35px;
     padding-bottom: 150px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-nav ul a li {
-    font-family: "Inria Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-    list-style: none;
-    font-size: 15px;
-    color: black;
-}
-
-nav ul a {
-    text-decoration: none;
-}
-
-.navbar-elt {
-    text-align: center;
-    line-height: 20px;
-} */
-
-nav {
-    padding-top: 25px;
-    padding-bottom: 150px;
+    overflow: hidden;
 }
 
 .navbar_ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
 .navbar_ul a {
@@ -85,7 +55,7 @@ li.dropdown {
     border-radius: 7px;
 }
 
-.dropdown-content a {
+.dropdown-content  a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -99,4 +69,118 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+li.logo_shop1 {
+    display: flex;
+    position: absolute;
+    right: 2px;
+    padding-right: 46px;
+    font-size: 27px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+li.logo_shop1 a i {
+    color: #352f36;
+}
+
+li.logo_shop1:hover a i {
+    transform: scale(1.2);
+    color: black;
+}
+
+/* Icône pour le menu mobile */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 14px 20px;
+}
+
+.responsive-nav {
+    display: none;
+}
+
+/* Responsive adjustments */@media screen and (max-width: 1136px) {
+    .navbar_ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        position: static;
+        align-items: flex-start;
+        gap : 10px;
+        padding-top: 10px;
+    }
+
+    .navbar_ul li {
+        padding-left: 30px;
+    }
+
+    .dropdown {
+        padding-left: 14px !important;
+        margin-top: -10px;
+    }
+
+    .logo_center {
+        display: none;
+        margin: 20px 0;
+        padding: 14px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .responsive-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .logo_shop {
+        position: absolute;
+        right: 10px;
+        top: 52px;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        padding-right: 46px;
+        font-size: 27px;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .logo_shop a i {
+        color: #352f36;
+    }
+
+    .logo_shop:hover a i {
+        transform: scale(1.2);
+        color: black;
+    }
+
+    .logo_shop1{
+        display: none !important;
+    }
+}
+
+/* Revenir à l'affichage normal pour les écrans plus larges */
+@media screen and (min-width: 1137px) {
+    .navbar_ul {
+        display: flex !important; /* Forcer l'affichage en flex */
+    }
+
+    .logo_center {
+        display: flex; /* Revenir à l'affichage du logo centré */
+    }
+
+    .responsive-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1368px) {
+    .logo_shop {
+        padding-right: 1%;
+    }
 }

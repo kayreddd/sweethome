@@ -18,9 +18,13 @@ body {
     padding-left: 50px;
     padding-bottom: 200px;
 }
+.img_product img {
+    border-radius: 5px;
+}
 
 .all_product_page {
     display: flex;
+    gap: 80px;
 }
 
 .info_product {
@@ -36,16 +40,17 @@ body {
 .info_product .p2 {
     font-size: 30px;
     padding-top: 30px;
-    padding-bottom: 120px;
+    padding-bottom: 55px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 300;
 }
 
 .info_product .p3 {
     padding-bottom: 70px;
-    font-size: 20px;
+    font-size: 21px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 300;
+    width: 80%;
 }
 
 .quantity-selector {
@@ -57,7 +62,7 @@ body {
 #decrease {
     width: 45px;
     height: 45px;
-    background-color: black;
+    background-color: #352f36;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -73,7 +78,7 @@ body {
 #increase {
     width: 45px;
     height: 45px;
-    background-color: black;
+    background-color: #352f36;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -100,16 +105,12 @@ body {
     padding: 11px 10px;
 }
 
-.atc_button {
-    
-}
-
 .atc_button button {
     cursor: pointer;
-    padding: 15px 200px;
+    padding: 15px 100px;
     font-size: 20px;
     color: white;
-    background-color: black;
+    background-color: #352f36;
     border: none;
     border-radius: 7px;
     font-family: "Nunito Sans", sans-serif;
@@ -119,5 +120,10 @@ body {
 
 .atc_button button:hover {
     background-color: black;
-    opacity: 80%;
 }
+
+.quantity-btn:hover{
+    background-color: black !important;
+    opacity: 100%;
+}
+
