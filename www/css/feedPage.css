@@ -19,9 +19,9 @@ body {
     padding-bottom: 100px;
     flex-direction: row;
     gap: 5rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    /* margin-left: 13rem; */
+    margin-left: 13rem;
 }
 
 .product-feed-info {
@@ -164,5 +164,12 @@ body{
     }
 }
 
+@media screen and (max-width : 1514px) {
+    .product-feed-all{
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+}
 
   
