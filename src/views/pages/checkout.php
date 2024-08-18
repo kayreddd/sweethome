@@ -39,8 +39,8 @@ if (!empty($cart)) {
 
     $checkout_session = \Stripe\Checkout\Session::create([
         "mode" => "payment",
-        "success_url" => "http://localhost:8888/www/?p=success",
-        "cancel_url" => "http://localhost:8888/www/?p=home",
+        "success_url" => "http://localhost:8888/sweethome/www/?p=success&session_id={CHECKOUT_SESSION_ID}",
+        "cancel_url" => "http://localhost:8888/sweethome/www/?p=home",
         "locale" => "fr",
         "line_items" => $line_items
     ]);

@@ -7,7 +7,7 @@ $title = "Sweet Home";
 require_once __DIR__ . '/../../utils/common.php';
 
 if (isset($_SESSION["cart"])) $cart = ($_SESSION["cart"]);
-var_dump($cart);
+// var_dump($cart);
 // session_destroy();
 
 
@@ -148,7 +148,7 @@ ob_start(); ?>
                                 <p class="font-italic mb-4">Les frais d'expédition et les frais supplémentaires sont calculés en fonction des valeurs que vous avez saisies.</p>
                                 <ul class="list-unstyled mb-4">
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong id="subtotal">7.60€</strong></li>
-                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Frais de livraison</strong><strong id="delivery-fee">2.99€</strong></li>
+                                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Frais de livraison</strong><strong id="delivery-fee">0.00€</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong id="tax">0.00€</strong></li>
                                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                                         <h5 class="font-weight-bold" id="total">10.59€</h5>
