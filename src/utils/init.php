@@ -8,7 +8,7 @@ require_once __DIR__ . '../../utils/common.php';
 require_once __DIR__ . '../../utils/db.php';
 
 // Configuration du site
-$existing_pages = ['home', 'personalizedServices', 'feedPage','contact', 'individualProductPage','shopCart'];
+$existing_pages = ['home', 'personalizedServices', 'feedPage','contact', 'individualProductPage','shopCart','checkout','pay','success'];
 $feed_pages = ['breads', 'pastries', 'sandwiches', 'drinks'];
 
 // Les classes
