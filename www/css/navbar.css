@@ -15,7 +15,7 @@ body {
 nav {
     padding-top: 35px;
     padding-bottom: 150px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .navbar_ul {
