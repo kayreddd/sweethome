@@ -12,3 +12,6 @@ SWEET HOME est un site web qui permet aux utilisateurs de retrouver et d'acheter
 5. Ouvrir http://localhost/sweethome/www/?p=home pour voir le résultat
 
 ## Images
+![Capture d'écran 2024-09-15 003941](https://github.com/user-attachments/assets/c4671023-c237-47ee-be0a-87aaee5e10ad)
+![Capture d'écran 2024-08-20 045725](https://github.com/user-attachments/assets/679bb5a0-fbd6-4e0d-8232-1ff1c3f16367)
+![Capture d'écran 2024-09-15 004126](https://github.com/user-attachments/assets/ad918e5b-53f9-47da-8c88-03c160bb889a)
