@@ -2,6 +2,7 @@
 
 ## Description
 SWEET HOME est un site web qui permet aux utilisateurs de retrouver et d'acheter les produits de la boulangerie SWEET HOME.
+Langages utilisés : PHP, HTML,CSS, MySQL, JavaScript
 
 ## Démarrage
 
