@@ -1,7 +1,10 @@
 # SWEET HOME
 
 ## Description
-SWEET HOME est un site web qui permet aux utilisateurs de retrouver et d'acheter les produits de la boulangerie SWEET HOME.
+SWEET HOME est un site e-commerce qui permet aux utilisateurs de retrouver et d'acheter les produits de la boulangerie SWEET HOME.
+On y retrouve une large sélection de produits et les différentes prestations qu'ils proposent
+
+Vous pourrez trouver les différents produits mis en vente dans le catalogue en navigant entre les catégories.
 
 Langages utilisés : PHP, HTML,CSS, MySQL, JavaScript
 
